@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SimpleFlowLayout">
+        <attr name="horizontalMargin" format="dimension" />
+        <attr name="verticalMargin" format="dimension" />
+        <attr name="itemHeight" format="dimension" />
+    </declare-styleable>
+</resources>

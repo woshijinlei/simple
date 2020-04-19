@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -22,7 +23,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -30,4 +33,21 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+}
+
+publish {
+    userOrg = 'woshijinlei'//bintray用户名
+
+    repoName = "simple"//代码仓库名称。 默认设置为“maven”
+
+    uploadName = "simple"// bintray中包的显示名称。 如果没有设置，artifactId将用于作为包名称
+
+    groupId = 'com.woshijinlei'//用于上传的group id
+    artifactId = 'simplething'//使用的artifactId
+    publishVersion = '1.0.1'
+
+    desc = 'simple thing'
+    website = 'https://github.com/woshijinlei/simple'
+    licences = ['Apache-2.0']//默认值为['Apache-2.0']
 }

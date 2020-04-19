@@ -1,13 +1,21 @@
-.gradle
-.idea
-build
-/local.properties
+#忽略所有build文件夹  build  /build
+build/
+
 androidTest
 Test
 
+#忽略所有.iml文件结尾的文件
 *.iml
+#忽略所有.gradle .idea的文件夹
+.gradle
+.idea
 
+#本地的sdk路径
+/local.properties
+
+#隐藏文件
 .DS_Store
+
 /captures
 .externalNativeBuild
 .cxx
